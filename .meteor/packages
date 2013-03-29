@@ -11,3 +11,5 @@ underscore
 less
 accounts-ui
 accounts-facebook
+collection-api
+normalize.css
