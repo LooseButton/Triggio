@@ -1,9 +1,17 @@
-Event = new Meteor.Collection "events"
+# Event model contains
+#    - sound_id: id of the sound to play
+#    - type: Type of the event. ie: PB Sale
+#    - source: Source of the event. ie: Pink Beryl, Luxebox 
+#    - message: Description of the event
+#    - event_params -> dict
 
-if Meteor.is_server
+Events = new Meteor.Collection "events"
+
+if Meteor.isServer
   Meteor.startup ->
+    # Set up our events creation api
     collectionApi = new CollectionAPI
       authToken: '97f0ad9e24ca5e0408a269748d7fe0a0'
       apiPath: 'api'
-    collectionApi.addCollection Event, 'events'
+    collectionApi.addCollection Events, 'events'
     collectionApi.start()

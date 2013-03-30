@@ -1,13 +1,24 @@
 <head>
-  <title>triggio</title>
+  <title>Triggio | The Event Player by Loose Button Engineering</title>
 </head>
 
 <body>
-  {{> hello}}
+  <div class="trigger-header">
+    <h1>Triggio</h1>
+    <h4>By Loose Button Engineering</h4>  
+  </div>
+  {{> events}}
 </body>
 
-<template name="hello">
-  <h1>Triggio!</h1>
-  {{greeting}}
-  <a class="golden retro-btn">Click</a>
+<template name="events">
+  <div class="events-wrapper">
+    <div class="events">
+      {{#each events}}
+        <div class="event clearfix">
+          <div class="event-type">{{ type }}</div>
+          <div class="event-msg">{{ message }}</div>
+        </div>
+      {{/each}}
+    </div>
+  </div>
 </template>
