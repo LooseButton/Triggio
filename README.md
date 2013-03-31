@@ -4,6 +4,11 @@ Triggio
 Web app that connects events send from trusted sources to sounds that are played.
 
 
+### Useful Commands
+
+**Starting the server**
+`mrt run`
+
 **Collections API**
 https://github.com/crazytoad/meteor-collectionapi
 

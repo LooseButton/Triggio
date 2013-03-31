@@ -15,3 +15,5 @@ if Meteor.isServer
       apiPath: 'api'
     collectionApi.addCollection Events, 'events'
     collectionApi.start()
+
+    

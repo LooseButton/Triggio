@@ -5,6 +5,7 @@ body, title, p, h1, h2, h3, h4, h5, div {
 html {
     background: #202020;
     color: #FFF;
+    
 }
 
 .trigger-header {
@@ -22,24 +23,32 @@ html {
     }
 }
 
-.events-wrapper { text-align: center; }
+.events-wrapper { 
+    text-align: center;
+    -webkit-perspective: 700px;
+    -moz-perspective: 700px;
+    -ms-perspective: 700px;
+    perspective: 700px;
+    margin-top: 300px;
+}
+
 .events {
-    margin-top: 60px;
     text-align: center;
     .inline-block();
 
     .event {
         margin-bottom: 20px;
         display: block;
+        position: relative;
 
         > div { float: left; }
         .event-type {
             color: #75DB5C;
-            font-size: 18px;
+            font-size: 28px;
         }
         .event-msg {
             margin-left: 12px;
-            font-size: 12px;
+            font-size: 22px;
             margin-top: 4px;
         }
     }
