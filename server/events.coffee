@@ -4,6 +4,7 @@
 #    - source: Source of the event. ie: Pink Beryl, Luxebox 
 #    - message: Description of the event
 #    - event_params -> dict
+#    - createdAt: Time the record is added (auto generated)
 
 Events = new Meteor.Collection "events"
 
@@ -16,4 +17,5 @@ if Meteor.isServer
     collectionApi.addCollection Events, 'events'
     collectionApi.start()
 
-    
+    Events.before "insert", (userId, doc) ->
+      doc.createdAt = Date.now()

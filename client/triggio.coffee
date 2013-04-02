@@ -2,14 +2,15 @@ Events = new Meteor.Collection "events"
 
 if Meteor.isClient
 
-  # Meteor.startup ->
-    # current_time = new Date().valueOf()
-    # Events.find().observe
-    #   addedAt: (target_event, index, before) ->
-    #     console.log target_event
-    #     console.log index
-    #     console.log before
-    #     console.log 'events added!'
+  window.play_sound ||= play_sound
+
+  Meteor.startup ->
+    current_time = Date.now()
+    Events.find().observe
+      addedAt: (target_event, index, before) ->
+        if target_event.createdAt > current_time
+          play_sound target_event.sound_id
+        
         
   Template.events.events = ->
     # Display all events
@@ -34,3 +35,9 @@ if Meteor.isClient
       z_index--;
       translate_y -= y_space
       translate_z -= z_space
+
+
+play_sound = (sound_id) ->
+  player = $('#clip_player').attr 
+    'src': "/clips/#{sound_id}.mp3"
+  player[0].play()
