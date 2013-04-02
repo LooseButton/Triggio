@@ -2,6 +2,7 @@ Events = new Meteor.Collection "events"
 
 if Meteor.isClient
 
+  # For testing
   window.play_sound ||= play_sound
 
   Meteor.startup ->
@@ -38,6 +39,17 @@ if Meteor.isClient
 
 
 play_sound = (sound_id) ->
-  player = $('#clip_player').attr 
-    'src': "/clips/#{sound_id}.mp3"
-  player[0].play()
+  # Remove any existing audio players
+  $('#clip_player').remove()
+  $('.audiojs').remove()
+
+  # Create a new audio player that autoplays
+  # This is done so audiojs can do its flash initialization if browser does not support mp3
+  audio = $('<audio>').attr
+    id: 'clip_player'
+    autoplay: true
+    preload: 'auto'
+    hidden: 'hidden'
+    src: "/clips/#{sound_id}.mp3"
+  $('body').append audio
+  audiojs.createAll()

@@ -3,6 +3,11 @@ Triggio
 
 Web app that connects events send from trusted sources to sounds that are played.
 
+Meteorite is used instead of meteor (https://github.com/oortcloud/meteorite)
+
+
+## Audio files
+Please provide audio clips in mp3 format. Since Triggio uses [audio.js](http://kolber.github.com/audiojs/) it support most browser with flash used as fallback
 
 ### Useful Commands
 
