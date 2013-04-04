@@ -16,9 +16,11 @@
   <div class="events-wrapper list">
     <div class="events">
       {{#each events}}
-        <div class="event clearfix">
-          <div class="event-type">{{ type }}</div>
-          <div class="event-msg">{{ message }}</div>
+        <div class="event">
+          <div class="event-content clearfix">
+            <div class="event-type">{{ type }}</div>
+            <div class="event-msg">{{ message }}</div>  
+          </div>          
         </div>
       {{/each}}
     </div>
