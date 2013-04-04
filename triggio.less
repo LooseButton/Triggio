@@ -27,11 +27,25 @@ html {
 
 .events-wrapper { 
     text-align: center;
-    -webkit-perspective: 700px;
-    -moz-perspective: 700px;
-    -ms-perspective: 700px;
-    perspective: 700px;
-    margin-top: 300px;
+
+    &.threed {
+        -webkit-perspective: 700px;
+        -moz-perspective: 700px;
+        -ms-perspective: 700px;
+        perspective: 700px;
+        margin-top: 300px;    
+    }
+
+    &.list {
+        margin-top: 80px;
+        .event-type { font-size: 20px; }
+        .event-msg { font-size: 15px; }
+
+        .event:first-child {
+            .event-type { text-shadow: 0px 0px 10px #008000; }
+            .event-msg { text-shadow: 0 0 10px #FFF; }
+        }
+    }
 }
 
 .events {
