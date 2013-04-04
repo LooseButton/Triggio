@@ -7,6 +7,7 @@ if Meteor.isClient
   window.animate_pulse_effect ||= animate_pulse_effect
 
   Meteor.startup ->
+    $('.trigger-header h1').fitText()
 
     # Observe for events added after startup and play corresponding sound clip
     current_time = Date.now()
