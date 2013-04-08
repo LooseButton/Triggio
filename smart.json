@@ -1,10 +1,12 @@
 {
   "meteor": {
     "git": "https://github.com/meteor/meteor.git",
-    "branch": "master"
+    "tag": "release/0.6.0"
   },
   "packages": {
-    "collection-api": {},
+    "collection-api": {
+      "git": "https://github.com/DracoLi/meteor-collectionapi"
+    },
     "normalize.css": {}
   }
 }

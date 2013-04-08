@@ -18,4 +18,4 @@ Please provide audio clips in mp3 format. Since Triggio uses [audio.js](http://k
 https://github.com/crazytoad/meteor-collectionapi
 
 ## Creating a record in terminal
-    curl -H "X-Auth-Token: 97f0ad9e24ca5e0408a269748d7fe0a0" -d '{"sound_id": "eat-mushroom", "type": "PB Sub", "source": "PB", "message": "+1 Member!"}' http://localhost:3000/api/events
+    curl -H "X-Auth-Token: 97f0ad9e24ca5e0408a269748d7fe0a0" -d '{"sound_id": "eat-mushroom", "type": "Draco", "source": "PB", "message": "Draco Demo Stuff"}' http://localhost:3000/api/events

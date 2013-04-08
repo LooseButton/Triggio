@@ -1,19 +1,22 @@
 {
   "meteor": {
     "git": "https://github.com/meteor/meteor.git",
-    "branch": "master",
-    "commit": "f07715dc70de16a7aab84e56ab0c6cbd9c1f9dc6"
+    "tag": "release/0.6.0",
+    "commit": "caaec1c7e370668620179f7cbadf02c035d56c1b"
   },
   "dependencies": {
     "basePackages": {
-      "collection-api": {},
+      "collection-api": {
+        "git": "https://github.com/DracoLi/meteor-collectionapi",
+        "branch": "master"
+      },
       "normalize.css": {}
     },
     "packages": {
       "collection-api": {
-        "git": "https://github.com/crazytoad/meteor-collectionapi.git",
-        "tag": "v0.1.12",
-        "commit": "08a660b5d227b613fa38793f916c4dd055fb8ad0"
+        "git": "https://github.com/DracoLi/meteor-collectionapi",
+        "branch": "master",
+        "commit": "722e7c3716275e59d96ae2f1d3781dbf0d16a953"
       },
       "normalize.css": {
         "git": "https://github.com/rithis/meteor-normalize.css",

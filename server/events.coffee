@@ -8,6 +8,27 @@
 
 Events = new Meteor.Collection "events"
 
+# Set up a callback for twillio message to add event
+Fiber = Npm.require("fibers")
+connect = Npm.require('connect')
+app = __meteor_bootstrap__.app
+regex = /(.+)\((.+)\)/
+router = connect.middleware.router (route) ->
+  route.get '/receive-sms', (req, res) ->
+    Fiber () ->
+      body = req.query['Body']
+      body = body.split(regex)
+      msg = body[1]
+      sound_id = body[2]
+      Events.insert
+        type: 'sms'
+        message: msg
+        sound_id: sound_id
+    .run()
+    res.writeHead(200)
+    res.end()
+app.use(router)
+
 if Meteor.isServer
   Meteor.startup ->
     # Set up our events creation api

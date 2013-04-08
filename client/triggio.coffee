@@ -1,10 +1,12 @@
 Events = new Meteor.Collection "events"
 
+
+# twillio = Npm.require('twilio')('ACbff1100d3c6c29267c50d97d2d551fad', 'afb76f524cbe1bcb9ef111e2d15a38e4')
+
 if Meteor.isClient
 
   # For testing
   window.play_sound ||= play_sound
-  window.animate_pulse_effect ||= animate_pulse_effect
 
   Meteor.startup ->
     $('.trigger-header h1').fitText 1, { maxFontSize: '100px'}
@@ -79,10 +81,3 @@ play_sound = (sound_id) ->
     src: "/clips/#{sound_id}.mp3"
   $('body').append audio
   audiojs.createAll()
-
-animate_pulse_effect = ($event) ->
-
-  for i in [1..5]
-    $event.find('.event-type')
-      .animate({'text-shadow': '#008000 0 0 30px'})
-      .animate({'text-shadow': '#008000 0 0 10px'})
