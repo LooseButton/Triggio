@@ -1,5 +1,5 @@
 Events = new Meteor.Collection "events"
-
+Meteor.subscribe "events"
 
 # twillio = Npm.require('twilio')('ACbff1100d3c6c29267c50d97d2d551fad', 'afb76f524cbe1bcb9ef111e2d15a38e4')
 

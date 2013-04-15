@@ -2,7 +2,7 @@
   "meteor": {
     "git": "https://github.com/meteor/meteor.git",
     "tag": "release/0.6.0",
-    "commit": "caaec1c7e370668620179f7cbadf02c035d56c1b"
+    "commit": "bb9e78f562d1b93a82bb8ca254d3714f82abb677"
   },
   "dependencies": {
     "basePackages": {
@@ -16,7 +16,7 @@
       "collection-api": {
         "git": "https://github.com/DracoLi/meteor-collectionapi",
         "branch": "master",
-        "commit": "722e7c3716275e59d96ae2f1d3781dbf0d16a953"
+        "commit": "fd9aeb716c1f98f0a5c63ce71bc956d013a8bd9c"
       },
       "normalize.css": {
         "git": "https://github.com/rithis/meteor-normalize.css",

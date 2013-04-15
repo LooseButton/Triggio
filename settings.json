@@ -1,0 +1,9 @@
+{
+  "emailUser": "username",
+  "emailPass": "password",
+  "emailHost": "example.com",
+  "emailPort": 25,
+  "authorizedEmails": [
+    "example@example.com"
+  ]
+}

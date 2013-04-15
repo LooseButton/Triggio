@@ -7,6 +7,17 @@
 #    - createdAt: Time the record is added (auto generated)
 
 Events = new Meteor.Collection "events"
+Meteor.publish("events", ->
+  user = Meteor.users.findOne({_id: @.userId})
+  if !(user is undefined)
+    userEmails = user.emails
+    for e in userEmails
+      if e.verified is true and e.address in Meteor.settings.authorizedEmails
+        return Events.find {},
+          sort: { 'createdAt': -1 }
+          limit: 15
+  return Events.find limit: 0
+)
 
 # Set up a callback for twillio message to add event
 Fiber = Npm.require("fibers")
@@ -40,3 +51,7 @@ if Meteor.isServer
 
     Events.before "insert", (userId, doc) ->
       doc.createdAt = Date.now()
+
+    process.env.MAIL_URL = "smtp://#{Meteor.settings.emailUser}:#{Meteor.settings.emailPass}@#{Meteor.settings.emailHost}:#{Meteor.settings.emailPort}"
+
+    Accounts.config sendVerificationEmail: true, forbidClientAccountCreation: false
