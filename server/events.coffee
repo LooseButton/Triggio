@@ -44,7 +44,7 @@ if Meteor.isServer
   Meteor.startup ->
     # Set up our events creation api
     collectionApi = new CollectionAPI
-      authToken: '97f0ad9e24ca5e0408a269748d7fe0a0'
+      authToken: Meteor.settings.authToken
       apiPath: 'api'
     collectionApi.addCollection Events, 'events'
     collectionApi.start()
