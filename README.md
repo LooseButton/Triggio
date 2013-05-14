@@ -3,7 +3,7 @@ Triggio
 
 Web app that connects events send from trusted sources to sounds that are played.
 
-Meteorite is used instead of meteor (https://github.com/oortcloud/meteorite)
+[Meteorite](https://github.com/oortcloud/meteorite) is used instead of meteor.
 
 
 ## Audio files
@@ -19,3 +19,8 @@ https://github.com/crazytoad/meteor-collectionapi
 
 ## Creating a record in terminal
     curl -H "X-Auth-Token: 97f0ad9e24ca5e0408a269748d7fe0a0" -d '{"sound_id": "eat-mushroom", "type": "Draco", "source": "PB", "message": "Draco Demo Stuff"}' http://localhost:3000/api/events
+
+
+    $ curl -H "X-Auth-Token: 97f0ad9e24ca5e0408a269748d7fe0a0" http://localhost:3000/api/events
+
+
